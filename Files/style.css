@@ -1,3 +1,15 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .quiz {
     justify-content: center;
     margin: auto;
@@ -10,18 +22,10 @@
 .welcome {
     margin-bottom: 15px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 280%;
+    font-size: 500%;
     text-decoration: underline;
     text-align: center;
     color: navy;
-}
-
-.bienvenida {
-    margin-bottom: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 150%;
-    color: blueviolet;
-    text-align: center;
 }
 
  p {
@@ -34,29 +38,47 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: navy;
+    font-size: 200%;
 }
 
 .result {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     color: navy;
+    font-size: 120%;
 }
 
-li {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.choices {
+    display: contents;
+    text-align: center;
+}
+
+button {
+    background-color: navy;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    padding: 10px 25px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.score-form  {
     text-align: center;
     color: navy;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
 }
 
 h4, h5 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: navy;
+    font-size: 150%;
 }
 
-h6 {
-    align-content: flex-end;
+footer {
+    margin-top: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: navy;
+    font-size: 150%;
 }

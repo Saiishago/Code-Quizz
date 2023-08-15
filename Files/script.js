@@ -120,3 +120,7 @@ console.log("High Scores:");
 highScores.forEach((entry, index) => {
     console.log(`${index + 1}. ${entry.alias}: ${entry.score}`);
 });
+
+var scoreEl = $('#score-list');
+
+
