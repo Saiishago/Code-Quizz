@@ -9,14 +9,23 @@
     <h2 class="welcome">Quizz Questions</h2>
     <h3 class="bienvenida">Prueba Preguntas</h3>
     <p id="question" class="question">Question will appear here.</p>
-    <p id="preguntas" class="preguntas">La pregunta aparecera aqui</p>
     <ul id="choices">
       <li><button onclick="checkAnswer(0)">Option 1</button></li>
       <li><button onclick="checkAnswer(1)">Option 2</button></li>
       <li><button onclick="checkAnswer(2)">Option 3</button></li>
       <li><button onclick="checkAnswer(3)">Option 4</button></li>
     </ul>
-    <p id="result"></p>
+    <p id="result" class="result"></p>
+  </div>
+  <h4>High Scorezz</h4>
+  <form id="score-form">
+    <label for="alias">Insert Your Alias</label>
+    <input type="text" id="alias" maxlength="6" required>
+    <button type="submit">Sumbit Score</button>
+  </form>
+  <div id="high-scorezz">
+    <h5>Top Scorezz</h5>
+    <ul id="score-list"></ul>
   </div>
 
   <script src="./script.js"></script>

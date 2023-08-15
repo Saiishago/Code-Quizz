@@ -1,20 +1,49 @@
 const questions = [
     {
-      question: "What is the capital of France?",
-      choices: ["London", "Berlin", "Madrid", "Paris"],
+      question: "Which of the following is NOT a Logical Operator?",
+      choices: ["&&", "<<", "!", "||"],
+      correctAnswer: 1
+    },
+    {
+      question: "What are the names of storage locations?",
+      choices: ["Data types", "CSS", "Variables", "Functions"],
+      correctAnswer: 2
+    },
+    {
+      question: "How many continents are there?",
+      choices: ["5", "3", "8", "7"],
       correctAnswer: 3
     },
     {
-      question: "Which planet is known as the 'Red Planet'?",
-      choices: ["Mars", "Venus", "Jupiter", "Neptune"],
-      correctAnswer: 0
+        question: "Which of the following is NOT a Semantic HTML tag?",
+        choices: ["span", "article", "footer", "header"],
+        correctAnswer: 0
+    },
+    {
+        question: "What do we call a property that moves items as individuals?",
+        choices: ["align-items", "align-self", "root", "order"],
+        correctAnswer: 3
+    },
+    {
+        question: "Which country has the most educated President?",
+        choices: ["France", "Ghana", "Kenya", "Germany"],
+        correctAnswer: 2
+    },
+    {
+        question: "What do we call a language used to style a web page?",
+        choices: ["SQL", "CSS", "JavaScript", "Python"],
+        correctAnswer: 1
+    },
+    {
+        question: "What do we call a variable that can hold more than one value",
+        choices: ["Function", "Syntax","Array", "String"],
+        correctAnswer: 2
     }
-    // Add more questions here
   ];
 
   let currentQuestion = 0;
   let timer;
-  let timeLeft = 10; // Set the initial time limit in seconds
+  let timeLeft = 20;
 
   function displayQuestion() {
     document.getElementById("question").textContent = questions[currentQuestion].question;
@@ -36,14 +65,14 @@ const questions = [
     }
     currentQuestion++;
     if (currentQuestion < questions.length) {
-      setTimeout(displayQuestion, 1000); // Display next question after 1 second
+      setTimeout(displayQuestion, 1000);
     } else {
       document.getElementById("quiz").innerHTML = "<h2>Quiz completed!</h2>";
     }
   }
 
   function startTimer() {
-    timeLeft = 10; // Reset the timer
+    timeLeft = 20;
     timer = setInterval(function() {
       document.getElementById("result").textContent = `Time left: ${timeLeft} seconds`;
       timeLeft--;
@@ -52,13 +81,42 @@ const questions = [
         document.getElementById("result").textContent = "Time's up!";
         currentQuestion++;
         if (currentQuestion < questions.length) {
-          setTimeout(displayQuestion, 1000); // Display next question after 1 second
+          setTimeout(displayQuestion, 1000);
         } else {
           document.getElementById("quiz").innerHTML = "<h2>Quiz completed!</h2>";
         }
       }
-    }, 1000); // Update timer every second
+    }, 1000);
   }
 
-  // Start the quiz
+
   displayQuestion();
+
+function addScore(score, alias) {
+    const scores = getScores();
+    scores.push({ alias, score });
+    scores.sort((a, b) => b.score - a.score);
+    if (scores.length > 5) {
+        scores.pop();
+    }
+    saveScores(scores);
+}
+
+function getScores() {
+    const scoresJSON = localStorage.getItem('scores');
+    return scoresJSON ? JSON.parse(scoresJSON) : [];
+}
+
+function saveScores(scores) {
+    localStorage.setItem('scores', JSON.stringify(scores));
+}
+
+addScore("SKM", 1000);
+addScore("ISL", 750);
+addScore("RCL", 1200);
+
+const highScores = getScores();
+console.log("High Scores:");
+highScores.forEach((entry, index) => {
+    console.log(`${index + 1}. ${entry.alias}: ${entry.score}`);
+});
