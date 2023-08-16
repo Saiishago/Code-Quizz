@@ -7,9 +7,13 @@ Links and Screenshot:
 
 Deployed Application ;
 
+https://saiishago.github.io/Code-Quizz/
+
 Github ;
 
-Screenshot ; ![Alt text](<Files/Code Quiz.png>)
+https://github.com/Saiishago/Code-Quizz
+
+Screenshot ; ![Alt text](<Code Quiz.png>)
 
 
 Files
